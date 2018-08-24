@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  jenkins:
+    image: gnoguchi/jenkins
+    ports:
+      - "8888:8080"
+    volumes:
+      - "/home/gabriel/Documentos/repositorio/estudos/devops/pipeline/docker-composes/volumes/jenkins:/var/jenkins_home"
+  customer-node-app:
+    image: gnoguchi/simplenodeapp
+    ports:
+      - "3000:3000"
+  sonarqube:
+    image: sonarqube:7.1
+    ports:
+      - "9000:9000"
+      - "9002:9002"
