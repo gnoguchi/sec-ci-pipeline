@@ -28,10 +28,5 @@ services:
     image: rancher/server:v1.6.8
     ports:
       - "8080:8080"
-  rancher-agent:
-    image: rancher/agent:v1.2.6
     volumes:
-      - "/home/gabriel/Documentos/repositorio/estudos/devops/projeto-devsecops-ci/volumes/rancher/sock:/var/run/docker.sock"
-      - "/home/gabriel/Documentos/repositorio/estudos/devops/projeto-devsecops-ci/volumes/rancher/lib-rancher:/var/lib/rancher"
-    environment:
-      - CATTLE_HOST_LABELS='group=nodeapp'
+      - "/home/gabriel/Documentos/repositorio/estudos/devops/projeto-devsecops-ci/volumes/rancher/server-mysql:/var/lib/mysql"
