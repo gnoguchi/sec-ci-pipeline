@@ -6,6 +6,11 @@ services:
       - "8888:8080"
     volumes:
       - "/home/gabriel/Documents/repositorio/estudos/projeto-ci-devsecops/volumes/jenkins:/var/jenkins_home"
+    links:
+      - sonarqube:sonarqube
+      - owasp-dependency-check:owasp-dp
+      - rancher-server:rancher-server
+      - arachni:arachni
   sonarqube:
     image: sonarqube:7.1
     ports:
